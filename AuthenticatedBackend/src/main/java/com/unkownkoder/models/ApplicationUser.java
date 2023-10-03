@@ -22,7 +22,8 @@ import jakarta.persistence.Table;
 @Table(name="users")
 public class ApplicationUser implements UserDetails{
 
-    @Id
+    private static final long serialVersionUID = 1L;
+	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer userId;
 	@Column(unique=true)
@@ -65,13 +66,11 @@ public class ApplicationUser implements UserDetails{
 
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
-		// TODO Auto-generated method stub
 		return this.authorities;
 	}
 
 	@Override
 	public String getPassword() {
-		// TODO Auto-generated method stub
 		return this.password;
 	}
 	
@@ -81,7 +80,6 @@ public class ApplicationUser implements UserDetails{
 
 	@Override
 	public String getUsername() {
-		// TODO Auto-generated method stub
 		return this.username;
 	}
 	

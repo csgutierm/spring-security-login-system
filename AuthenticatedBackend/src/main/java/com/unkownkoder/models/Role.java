@@ -13,7 +13,9 @@ import jakarta.persistence.Table;
 @Table(name="roles")
 public class Role implements GrantedAuthority {
 
-    @Id
+    private static final long serialVersionUID = 1L;
+
+	@Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     @Column(name="role_id")
     private Integer roleId;
